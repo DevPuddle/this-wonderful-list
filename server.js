@@ -19,12 +19,16 @@ mongoose.connect(process.env.DB_CONNECTION,
 
 app.get('/', async (req, res) => {
     try{
-        TodoTasks.find({}, (err, tasks) => {
+        todotasks.find({}, (err, tasks) => {
         res.render('index.ejs', {todotasks: tasks})
         })
     } catch (err) {
         if (err) return res.status(500).send(err)
     }
+})
+
+app.post(, (req, res) => {
+    
 })
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT} better go catch it!`))
