@@ -1,4 +1,5 @@
 //Decleared Variables
+const { response } = require('express')
 const express = require('express')
 const app = express()
 const PORT = 8500
@@ -24,7 +25,7 @@ app.get('/', async (req, res) => {
             })
         })
     } catch (err) {
-        if (err) return res.status(500).send(err)
+        response.status(500).send({message: error.message})
     }
 })
 
