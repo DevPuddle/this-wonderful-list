@@ -3,9 +3,8 @@ const express = require('express')
 const app = express()
 const PORT = 8500
 const mongoose = require('mongoose')
-const todotasks = require('./models/todotasks')
 require('dotenv').config()
-const TodoTask = require('./models/todotasks')
+const TodoTasks = require('./models/todotasks')
 
 //Middleware
 app.set('view engine', 'ejs')
@@ -14,21 +13,36 @@ app.use(express.urlencoded({ extended: true }))
 
 mongoose.connect(process.env.DB_CONNECTION,
     { useNewUrlParser: true },
-    () => { console.log('Connected to db!')}
+    () => { console.log('Connected to db!') }
 )
 
 app.get('/', async (req, res) => {
-    try{
-        todotasks.find({}, (err, tasks) => {
-        res.render('index.ejs', {todotasks: tasks})
+    try {
+        TodoTasks.find({}, (err, tasks) => {
+            res.render("index.ejs", {
+                todoTasks: tasks
+            })
         })
     } catch (err) {
         if (err) return res.status(500).send(err)
     }
 })
 
-app.post(, (req, res) => {
-    
+app.post('/', async(req, res) => {
+    const todotasks = new TodoTasks(
+         {
+            title: req.body.title,
+            content: req.body.content
+         }
+    )
+    try {
+        await todotasks.save()
+        console.log(TodoTasks)
+        res.redirect('/')
+    } catch(err) {
+        if (err) return res.status(500).send(err)
+        res.redirect('/')
+    }
 })
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT} better go catch it!`))
