@@ -20,12 +20,12 @@
         <h2>Edit List Item</h2>
         <section class="todo">
             <ul class="todo-list">
-                <% todoTasks.forEach(task=> {%>
+                <% todoTasks.forEach(task => {%>
                     <% if (task._id==idTask) { %>
                         <li class='todo-list-item'>
-                            <form action='/edit/<%= tasks._id%>' method="POST">
-                                <input type="text" name="title" value="<%task.title %>">
-                                <textarea rows="6" cols="45" name="content">%task.content %></textarea>
+                            <form action='/edit/<%= task._id %>' method="POST">
+                                <input type="text" name="title" value="<%=task.title %>">
+                                <textarea rows="6" cols="45" name="content">%tasks.content %></textarea>
                                 <button type="Submit" class="confirm">Confirm</button>
                                 <a href="/" class="cancel">Cancel</a>
                             </form>
@@ -43,12 +43,11 @@
                                         <a href="/remove/<%=task._id %>" class="remove"><span
                                                 class="fas fa-times "></span></a>
                                     </li>
+                                    <% } %>
                                     <% }) %>
-                                        <% }) %>
                             </ul>
         </section>
     </section>
 
 </body>
-
 </html>

@@ -70,6 +70,17 @@ app
             }
         )
     })
+
+//DELETE
+app
+    .route("/remove/:id")
+    .get((req,res) => {
+        const id = req.params.id
+        TodoTasks.findByIdAndRemove(id, err => {
+            if (err) return res.status(500).send(err)
+            res.redirect('/')
+        })
+    })
  
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT} better go catch it!`))
