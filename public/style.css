@@ -43,4 +43,48 @@ input {
 textarea {
     font-family: "Edu TAS Beginner", sans-serif;
     display: block;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.todo-header button {
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+    background-color: limegreen;
+    font-family: "Edu TAS Beginner", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.todo-list-item {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: row;
+}
+
+.todo-list-item-content {
+    font-size: .8rem;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.todo-list-item form {
+    width: 100%;
+    display: flex;
+}
+
+.todo-list-item input {
+    flex-grow: 2;
+    margin-right: 20px;
+    border-radius: 5px;
 }
