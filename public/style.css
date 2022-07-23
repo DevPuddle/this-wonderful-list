@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: darkblue;
+    font-family: "Edu TAS Beginner", sans-serif;
+
+}
+
+.todo-container {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo {
+    width: 400px;
+}
+
+h2 {
+    padding: 10px;
+    font-size: 2rem;
+}
+
+input {
+    font-family: "Edu TAS Beginner", sans-serif;
+    margin-bottom: 2px;
+    padding: 5px;
+    height: 20px;
+}
+
+textarea {
+    font-family: "Edu TAS Beginner", sans-serif;
+    display: block;
+}
