@@ -38,6 +38,7 @@ input {
     margin-bottom: 2px;
     padding: 5px;
     height: 20px;
+    width: 100%;
 }
 
 textarea {
@@ -54,6 +55,7 @@ textarea {
     cursor: pointer;
     margin: 5px;
     padding: 5px;
+    border-radius: 5px;
     background-color: limegreen;
     font-family: "Edu TAS Beginner", sans-serif;
 }
@@ -70,6 +72,7 @@ ul {
     background: rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .todo-list-item-content {
@@ -87,4 +90,48 @@ ul {
     flex-grow: 2;
     margin-right: 20px;
     border-radius: 5px;
+}
+
+.todo-list-item .confirm {
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: limegreen;
+    margin-left: 5px;
+    max-height: 30px;
+    font-family: "Edu TAS Beginner", sans-serif;
+    display: block;
+
+}
+
+.todo-list-item .cancel {
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    background-color: red;
+    margin-left: 5px;
+    max-height: 30px;
+    font-family: "Edu TAS Beginner", sans-serif;
+    display: block;
+}
+
+.todo-list-item .edit {
+    color: limegreen;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: auto;
+}
+
+.todo-list-item .remove {
+    color: red;
+    margin-right: 5px;
+    cursor: pointer;
+    text-decoration: none;
 }
